@@ -1,0 +1,52 @@
+{
+  "name": "electricitystatusapp",
+  "version": "1.0.0",
+  "main": "expo/AppEntry.js",
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web",
+    "test": "jest",
+    "test:e2e": "detox test",
+    "build": "eas build --platform all",
+    "publish": "expo publish"
+  },
+  "jest": {
+    "preset": "react-native",
+    "setupFilesAfterEnv": [
+      "@testing-library/react-native/jest-preset"
+    ]
+  },
+  "detox": {
+    "configurations": {
+      "ios.sim.debug": {
+        "binaryPath": "ios/build/Build/Products/Debug-iphonesimulator/YourApp.app",
+        "build": "xcodebuild -workspace ios/YourApp.xcworkspace -scheme YourApp -configuration Debug -sdk iphonesimulator -derivedDataPath ios/build",
+        "type": "ios.simulator",
+        "name": "iPhone 11"
+      }
+    }
+  },
+  "dependencies": {
+    "@react-navigation/native": "^6.1.17",
+    "@react-navigation/native-stack": "^6.9.26",
+    "@testing-library/react-native": "^12.5.0",
+    "expo": "~51.0.7",
+    "expo-location": "~17.0.1",
+    "expo-status-bar": "~1.12.1",
+    "expo-updates": "~0.25.14",
+    "firebase": "^10.12.0",
+    "react": "18.2.0",
+    "react-native": "0.74.1",
+    "react-native-config": "^1.5.1",
+    "react-native-geocoding": "^0.5.0",
+    "react-native-maps": "1.14.0",
+    "react-native-safe-area-context": "4.10.1",
+    "react-native-screens": "3.31.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.20.0"
+  },
+  "private": true
+}
